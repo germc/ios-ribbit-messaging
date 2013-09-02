@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface CameraViewController ()
 
@@ -18,7 +19,7 @@
 {
     [super viewDidLoad];
     
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -27,6 +28,7 @@
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
     self.imagePicker.allowsEditing = NO;
+    self.imagePicker.videoMaximumDuration = 10;
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         
@@ -86,10 +88,28 @@
     [self.tabBarController setSelectedIndex:0];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    if([mediaType isEqualToString:(NSString *)kUTTypeImage]){
+        // photo was taken or selected
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        if(self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera){
+            // save the image
+            UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+        }
+        
+    }else{
+        // a video was taken or selected
+        self.videoFilePath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
+        if(self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera){
+            // save the video
+            if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.videoFilePath)){
+                UISaveVideoAtPathToSavedPhotosAlbum(self.videoFilePath, nil, nil, nil);
+            }
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
-
-
-
-
-
-
