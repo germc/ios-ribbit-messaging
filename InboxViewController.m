@@ -7,6 +7,7 @@
 //
 
 #import "InboxViewController.h"
+#import <Parse/Parse.h>
 
 @interface InboxViewController ()
 
@@ -20,7 +21,7 @@
     [super viewDidLoad];
     
     [self performSegueWithIdentifier:@"showLogin" sender:self];
-
+    
 }
 
 #pragma mark - Table view data source
