@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1445" y="-916"/>
         </scene>
-        <!--View Controller - Ribbit-->
+        <!--Login View Controller - Ribbit-->
         <scene sceneID="U6D-Ao-Jcz">
             <objects>
-                <viewController id="o5y-3m-JYO" sceneMemberID="viewController">
+                <viewController id="o5y-3m-JYO" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FSb-Ux-0KC">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -193,10 +193,10 @@
             </objects>
             <point key="canvasLocation" x="1843" y="-914"/>
         </scene>
-        <!--View Controller - Ribbit-->
+        <!--Signup View Controller - Ribbit-->
         <scene sceneID="IVz-wt-Nqx">
             <objects>
-                <viewController id="ZUD-Gp-9zx" sceneMemberID="viewController">
+                <viewController id="ZUD-Gp-9zx" customClass="SignupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pcn-0S-55j">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -218,6 +218,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signup:" destination="ZUD-Gp-9zx" eventType="touchUpInside" id="eXN-Kz-W5N"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-bW-Keb">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -241,6 +244,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="ubL-WS-TBi"/>
+                    <connections>
+                        <outlet property="emailField" destination="KhE-bW-Keb" id="LF4-vq-bHo"/>
+                        <outlet property="passwordField" destination="RYO-8B-iGn" id="4H9-pc-j1U"/>
+                        <outlet property="usernameField" destination="hHe-W1-MZv" id="ahE-Xt-usl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6U-ch-pQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,14 +317,6 @@
         <image name="friends.png" width="40" height="24"/>
         <image name="inbox.png" width="32" height="21"/>
     </resources>
-    <classes>
-        <class className="InboxViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
