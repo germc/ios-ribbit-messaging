@@ -20,6 +20,7 @@
     [super viewDidLoad];
     
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -65,3 +66,10 @@
 }
 
 @end
+
+
+
+
+
+
+

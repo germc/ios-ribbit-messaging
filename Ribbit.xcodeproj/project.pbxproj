@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C39254317D526A400DC4164 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C39254217D526A400DC4164 /* CameraViewController.m */; };
 		3C40B59317D4ED9900437725 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C40B59217D4ED9900437725 /* Parse.framework */; };
 		3C40B59D17D4EE3100437725 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C40B59417D4EE3000437725 /* AudioToolbox.framework */; };
 		3C40B59E17D4EE3100437725 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C40B59517D4EE3000437725 /* CFNetwork.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C39254117D526A400DC4164 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraViewController.h; path = ../CameraViewController.h; sourceTree = "<group>"; };
+		3C39254217D526A400DC4164 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraViewController.m; path = ../CameraViewController.m; sourceTree = "<group>"; };
 		3C40B59217D4ED9900437725 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		3C40B59417D4EE3000437725 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3C40B59517D4EE3000437725 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -162,6 +165,8 @@
 		3CD50B9E17D326D900F21CA7 /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				3C39254117D526A400DC4164 /* CameraViewController.h */,
+				3C39254217D526A400DC4164 /* CameraViewController.m */,
 				3C40B5AF17D512CB00437725 /* FriendsViewController.h */,
 				3C40B5B017D512CB00437725 /* FriendsViewController.m */,
 				3C40B5AC17D5009500437725 /* EditFriendsViewController.h */,
@@ -272,6 +277,7 @@
 				3C40B5AB17D4F04700437725 /* SignupViewController.m in Sources */,
 				3C40B5AE17D5009500437725 /* EditFriendsViewController.m in Sources */,
 				3C40B5B117D512CB00437725 /* FriendsViewController.m in Sources */,
+				3C39254317D526A400DC4164 /* CameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
