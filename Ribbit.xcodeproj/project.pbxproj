@@ -20,6 +20,7 @@
 		3C40B5A817D4F03800437725 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C40B5A717D4F03800437725 /* LoginViewController.m */; };
 		3C40B5AB17D4F04700437725 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C40B5AA17D4F04700437725 /* SignupViewController.m */; };
 		3C40B5AE17D5009500437725 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C40B5AD17D5009500437725 /* EditFriendsViewController.m */; };
+		3C40B5B117D512CB00437725 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C40B5B017D512CB00437725 /* FriendsViewController.m */; };
 		3C61F72417D4046400AFC1E6 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C61F71E17D4046400AFC1E6 /* camera.png */; };
 		3C61F72517D4046400AFC1E6 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C61F71F17D4046400AFC1E6 /* camera@2x.png */; };
 		3C61F72617D4046400AFC1E6 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C61F72017D4046400AFC1E6 /* friends.png */; };
@@ -56,6 +57,8 @@
 		3C40B5AA17D4F04700437725 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = ../SignupViewController.m; sourceTree = "<group>"; };
 		3C40B5AC17D5009500437725 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditFriendsViewController.h; path = ../EditFriendsViewController.h; sourceTree = "<group>"; };
 		3C40B5AD17D5009500437725 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditFriendsViewController.m; path = ../EditFriendsViewController.m; sourceTree = "<group>"; };
+		3C40B5AF17D512CB00437725 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsViewController.h; path = ../FriendsViewController.h; sourceTree = "<group>"; };
+		3C40B5B017D512CB00437725 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = ../FriendsViewController.m; sourceTree = "<group>"; };
 		3C61F71E17D4046400AFC1E6 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		3C61F71F17D4046400AFC1E6 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		3C61F72017D4046400AFC1E6 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 		3CD50B9E17D326D900F21CA7 /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				3C40B5AF17D512CB00437725 /* FriendsViewController.h */,
+				3C40B5B017D512CB00437725 /* FriendsViewController.m */,
 				3C40B5AC17D5009500437725 /* EditFriendsViewController.h */,
 				3C40B5AD17D5009500437725 /* EditFriendsViewController.m */,
 				3C40B5A617D4F03800437725 /* LoginViewController.h */,
@@ -266,6 +271,7 @@
 				3C40B5A817D4F03800437725 /* LoginViewController.m in Sources */,
 				3C40B5AB17D4F04700437725 /* SignupViewController.m in Sources */,
 				3C40B5AE17D5009500437725 /* EditFriendsViewController.m in Sources */,
+				3C40B5B117D512CB00437725 /* FriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
