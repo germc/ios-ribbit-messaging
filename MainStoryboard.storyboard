@@ -108,7 +108,13 @@
                             <outlet property="delegate" destination="uPo-RJ-RiI" id="c0H-7K-Nmm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="zwh-3u-30V"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="zwh-3u-30V">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="tpe-fr-ep3">
+                            <connections>
+                                <action selector="logout:" destination="uPo-RJ-RiI" id="yCq-bu-P7t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="o5y-3m-JYO" kind="push" identifier="showLogin" id="WST-ca-WMO"/>
                     </connections>
@@ -142,6 +148,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="o5y-3m-JYO" eventType="touchUpInside" id="qGm-98-9Be"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivr-PI-07N">
                                 <constraints>
@@ -188,6 +197,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="rwR-MO-I87"/>
+                    <connections>
+                        <outlet property="passwordField" destination="lDQ-h3-g1L" id="F3E-gr-XXG"/>
+                        <outlet property="usernameField" destination="BQj-Y4-b5Z" id="3qU-JA-0hf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTV-PS-L7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
