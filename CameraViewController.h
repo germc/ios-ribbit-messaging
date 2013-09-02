@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraViewController : UITableViewController
+@interface CameraViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 @end
