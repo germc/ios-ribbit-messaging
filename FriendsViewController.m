@@ -15,11 +15,14 @@
 
 @implementation FriendsViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
@@ -44,8 +47,7 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
