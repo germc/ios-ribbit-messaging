@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
     
+
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     // bare minimum to setup a camera
     self.imagePicker = [[UIImagePickerController alloc] init];
     self.imagePicker.delegate = self;
@@ -73,4 +78,18 @@
      */
 }
 
+#pragma mark - Image Picker Controller delegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [self.tabBarController setSelectedIndex:0];
+}
+
 @end
+
+
+
+
+
+
