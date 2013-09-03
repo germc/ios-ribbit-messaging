@@ -37,21 +37,24 @@
         }
     }];
     
-    // bare minimum to setup a camera
-    self.imagePicker = [[UIImagePickerController alloc] init];
-    self.imagePicker.delegate = self;
-    self.imagePicker.allowsEditing = NO;
-    self.imagePicker.videoMaximumDuration = 10;
-    
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+    if(self.image == nil && self.videoFilePath == 0){
         
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }else{
-        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        // bare minimum to setup a camera
+        self.imagePicker = [[UIImagePickerController alloc] init];
+        self.imagePicker.delegate = self;
+        self.imagePicker.allowsEditing = NO;
+        self.imagePicker.videoMaximumDuration = 10;
+        
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }else{
+            self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
+        //
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
     }
-    self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
-    //
-    [self presentViewController:self.imagePicker animated:NO completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -85,7 +88,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -147,7 +150,6 @@
         [self presentViewController:self.imagePicker animated:NO completion:nil];
     }else{
         [self uploadMessage];
-        [self reset];
         [self.tabBarController setSelectedIndex:0];
     }
 }
@@ -155,13 +157,47 @@
 #pragma mark - Helper methods
 
 - (void)uploadMessage{
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
     // check if image or video
     if (self.image != nil){
         UIImage *newImage = [self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+        fileData = UIImagePNGRepresentation(newImage);
+        fileName = @"image.png";
+        fileType = @"image";
+    }else{
+        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
+        fileName = @"video.mov";
+        fileType = @"video";
     }
-    // if image, shrink it
-    // upload the file itself
-    // upload the message details
+    
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if(error){
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error occured!" message:@"Please try sending your message again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }else{
+            // create a message object for recipients selected
+            PFObject *message = [PFObject objectWithClassName:@"Messages"];
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(error){
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error occured!" message:@"Please try sending your message again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                }else{
+                    // everything was successful
+                    [self reset];
+                }
+            }];
+        }
+    }];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height{
