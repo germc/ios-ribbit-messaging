@@ -39,6 +39,11 @@
 		3CD50BAD17D326D900F21CA7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD50BAC17D326D900F21CA7 /* Default@2x.png */; };
 		3CD50BAF17D326D900F21CA7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD50BAE17D326D900F21CA7 /* Default-568h@2x.png */; };
 		3CD50BB617D326FE00F21CA7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD50BB517D326FE00F21CA7 /* MainStoryboard.storyboard */; };
+		3CDDC0FD17D6C531004E33F9 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0F917D6C531004E33F9 /* icon_image.png */; };
+		3CDDC0FE17D6C531004E33F9 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0FA17D6C531004E33F9 /* icon_image@2x.png */; };
+		3CDDC0FF17D6C531004E33F9 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0FB17D6C531004E33F9 /* icon_video.png */; };
+		3CDDC10017D6C531004E33F9 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0FC17D6C531004E33F9 /* icon_video@2x.png */; };
+		3CDDC10317D6CC5F004E33F9 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDC10217D6CC5F004E33F9 /* ImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +89,12 @@
 		3CD50BAC17D326D900F21CA7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3CD50BAE17D326D900F21CA7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3CD50BB517D326FE00F21CA7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3CDDC0F917D6C531004E33F9 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
+		3CDDC0FA17D6C531004E33F9 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
+		3CDDC0FB17D6C531004E33F9 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
+		3CDDC0FC17D6C531004E33F9 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
+		3CDDC10117D6CC5F004E33F9 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
+		3CDDC10217D6CC5F004E33F9 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +124,10 @@
 		3C61F72A17D4077D00AFC1E6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CDDC0F917D6C531004E33F9 /* icon_image.png */,
+				3CDDC0FA17D6C531004E33F9 /* icon_image@2x.png */,
+				3CDDC0FB17D6C531004E33F9 /* icon_video.png */,
+				3CDDC0FC17D6C531004E33F9 /* icon_video@2x.png */,
 				3C61F71E17D4046400AFC1E6 /* camera.png */,
 				3C61F71F17D4046400AFC1E6 /* camera@2x.png */,
 				3C61F72017D4046400AFC1E6 /* friends.png */,
@@ -165,20 +180,22 @@
 		3CD50B9E17D326D900F21CA7 /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				3CD50BA717D326D900F21CA7 /* AppDelegate.h */,
+				3CD50BA817D326D900F21CA7 /* AppDelegate.m */,
 				3C39254117D526A400DC4164 /* CameraViewController.h */,
 				3C39254217D526A400DC4164 /* CameraViewController.m */,
-				3C40B5AF17D512CB00437725 /* FriendsViewController.h */,
-				3C40B5B017D512CB00437725 /* FriendsViewController.m */,
 				3C40B5AC17D5009500437725 /* EditFriendsViewController.h */,
 				3C40B5AD17D5009500437725 /* EditFriendsViewController.m */,
+				3C40B5AF17D512CB00437725 /* FriendsViewController.h */,
+				3C40B5B017D512CB00437725 /* FriendsViewController.m */,
+				3CDDC10117D6CC5F004E33F9 /* ImageViewController.h */,
+				3CDDC10217D6CC5F004E33F9 /* ImageViewController.m */,
+				3C61F72B17D40E3800AFC1E6 /* InboxViewController.h */,
+				3C61F72C17D40E3800AFC1E6 /* InboxViewController.m */,
 				3C40B5A617D4F03800437725 /* LoginViewController.h */,
 				3C40B5A717D4F03800437725 /* LoginViewController.m */,
 				3C40B5A917D4F04700437725 /* SignupViewController.h */,
 				3C40B5AA17D4F04700437725 /* SignupViewController.m */,
-				3C61F72B17D40E3800AFC1E6 /* InboxViewController.h */,
-				3C61F72C17D40E3800AFC1E6 /* InboxViewController.m */,
-				3CD50BA717D326D900F21CA7 /* AppDelegate.h */,
-				3CD50BA817D326D900F21CA7 /* AppDelegate.m */,
 				3CD50B9F17D326D900F21CA7 /* Supporting Files */,
 			);
 			path = Ribbit;
@@ -260,6 +277,10 @@
 				3C61F72717D4046400AFC1E6 /* friends@2x.png in Resources */,
 				3C61F72817D4046400AFC1E6 /* inbox.png in Resources */,
 				3C61F72917D4046400AFC1E6 /* inbox@2x.png in Resources */,
+				3CDDC0FD17D6C531004E33F9 /* icon_image.png in Resources */,
+				3CDDC0FE17D6C531004E33F9 /* icon_image@2x.png in Resources */,
+				3CDDC0FF17D6C531004E33F9 /* icon_video.png in Resources */,
+				3CDDC10017D6C531004E33F9 /* icon_video@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +299,7 @@
 				3C40B5AE17D5009500437725 /* EditFriendsViewController.m in Sources */,
 				3C40B5B117D512CB00437725 /* FriendsViewController.m in Sources */,
 				3C39254317D526A400DC4164 /* CameraViewController.m in Sources */,
+				3CDDC10317D6CC5F004E33F9 /* ImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
