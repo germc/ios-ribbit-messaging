@@ -30,4 +30,26 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if([self respondsToSelector:@selector(timeout)]){
+    // set timer to do something after a period of time
+    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timeout) userInfo:nil repeats:NO];
+    }else{
+        NSLog(@"Error: selector missing!");
+    }
+}
+
+#pragma mark - Helper methods
+- (void)timeout{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end
+
+
+
+
+
+
