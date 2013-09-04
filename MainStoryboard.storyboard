@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Hfg-XG-yck">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Hfg-XG-yck">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -164,11 +164,39 @@
                     </navigationItem>
                     <connections>
                         <segue destination="o5y-3m-JYO" kind="push" identifier="showLogin" id="WST-ca-WMO"/>
+                        <segue destination="Qdy-dq-MB5" kind="push" identifier="showImage" id="dlc-ij-A0O"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEZ-Gk-6pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1445" y="-916"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="soX-7a-BlD">
+            <objects>
+                <viewController id="Qdy-dq-MB5" customClass="ImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xas-CZ-TAY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AH-g0-jJ5"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5AH-g0-jJ5" firstAttribute="trailing" secondItem="Xas-CZ-TAY" secondAttribute="trailing" type="default" id="Gch-UK-96j"/>
+                            <constraint firstItem="5AH-g0-jJ5" firstAttribute="leading" secondItem="Xas-CZ-TAY" secondAttribute="leading" type="default" id="Y7l-hl-gZW"/>
+                            <constraint firstItem="5AH-g0-jJ5" firstAttribute="bottom" secondItem="Xas-CZ-TAY" secondAttribute="bottom" type="default" id="iXf-MR-F2a"/>
+                            <constraint firstItem="5AH-g0-jJ5" firstAttribute="top" secondItem="Xas-CZ-TAY" secondAttribute="top" type="default" id="v31-vT-nV8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iFa-yX-FaF"/>
+                    <connections>
+                        <outlet property="imageView" destination="5AH-g0-jJ5" id="rWX-zk-THK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rid-h0-6Pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="-1491"/>
         </scene>
         <!--Login View Controller - Ribbit-->
         <scene sceneID="U6D-Ao-Jcz">
