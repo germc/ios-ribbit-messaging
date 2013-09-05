@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
     
+    self.moviePlayer = [[MPMoviePlayerController alloc] init];
+    
     PFUser *currentUser = [PFUser currentUser];
     if(currentUser) {
         //        NSLog(@"Current user: %@", currentUser.username);
@@ -90,7 +92,16 @@
         // if image
         [self performSegueWithIdentifier:@"showImage" sender:self];
     }else{
+        // file is video
+        PFFile *videoFile = [self.selectedMessage objectForKey:@"file"];
+        NSURL *fileURL = [NSURL URLWithString:videoFile.url];
+        self.moviePlayer.contentURL = fileURL;
+        [self.moviePlayer prepareToPlay];
+        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
         
+        // add to view controller so it is visible
+        [self.view addSubview:self.moviePlayer.view];
+        [self.moviePlayer setFullscreen:YES]; // must be called AFTER view is set in the hierarchy 
     }
 
 }
