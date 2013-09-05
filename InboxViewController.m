@@ -44,7 +44,7 @@
             // we found messages
             self.messages = objects;
             [self.tableView reloadData];
-            NSLog(@"Retrieved %d messages", [self.messages count]);
+//            NSLog(@"Retrieved %d messages", [self.messages count]);
         }
     }];
 }
@@ -101,9 +101,22 @@
         
         // add to view controller so it is visible
         [self.view addSubview:self.moviePlayer.view];
-        [self.moviePlayer setFullscreen:YES]; // must be called AFTER view is set in the hierarchy 
+        [self.moviePlayer setFullscreen:YES]; // must be called AFTER view is set in the hierarchy
     }
-
+    // delete it!
+    NSMutableArray *recipientIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientIds"]];
+//    NSLog(@"Recipients: %@", recipientIds);
+    
+    if([recipientIds count] == 1){
+        // last recipient, delete!
+        [self.selectedMessage deleteInBackground];
+    }else{
+        // remove the recipient and save
+        [recipientIds removeObject:[[PFUser currentUser] objectId]];
+        [self.selectedMessage setObject:recipientIds forKey:@"recipientIds"];
+        [self.selectedMessage saveInBackground];
+    }
+    
 }
 
 - (IBAction)logout:(id)sender {
@@ -119,9 +132,18 @@
         ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
         imageViewController.message = self.selectedMessage;
     }
+
 }
 
 @end
+
+
+
+
+
+
+
+
 
 
 
