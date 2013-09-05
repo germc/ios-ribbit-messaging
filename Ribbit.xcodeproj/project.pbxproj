@@ -44,6 +44,7 @@
 		3CDDC0FF17D6C531004E33F9 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0FB17D6C531004E33F9 /* icon_video.png */; };
 		3CDDC10017D6C531004E33F9 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDDC0FC17D6C531004E33F9 /* icon_video@2x.png */; };
 		3CDDC10317D6CC5F004E33F9 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDC10217D6CC5F004E33F9 /* ImageViewController.m */; };
+		3CDDC10517D9358A004E33F9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDDC10417D9358A004E33F9 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		3CDDC0FC17D6C531004E33F9 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
 		3CDDC10117D6CC5F004E33F9 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
 		3CDDC10217D6CC5F004E33F9 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
+		3CDDC10417D9358A004E33F9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CDDC10517D9358A004E33F9 /* MediaPlayer.framework in Frameworks */,
 				3C40B59D17D4EE3100437725 /* AudioToolbox.framework in Frameworks */,
 				3C40B59E17D4EE3100437725 /* CFNetwork.framework in Frameworks */,
 				3C40B59F17D4EE3100437725 /* CoreLocation.framework in Frameworks */,
@@ -160,6 +163,7 @@
 		3CD50B9717D326D900F21CA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CDDC10417D9358A004E33F9 /* MediaPlayer.framework */,
 				3C40B59417D4EE3000437725 /* AudioToolbox.framework */,
 				3C40B59517D4EE3000437725 /* CFNetwork.framework */,
 				3C40B59617D4EE3100437725 /* CoreLocation.framework */,
